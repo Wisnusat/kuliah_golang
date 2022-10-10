@@ -11,7 +11,7 @@ func soal1() {
 	fmt.Scanln(&x)
 	fmt.Print("Masukkan nilai y: ")
 	fmt.Scanln(&y)
-	var hasil float64 = 1/(3*x*x) + (10 * y) + 7
+	var hasil float64 = (1 / (3*x*x + 10)) + (10 * y) + 7
 	fmt.Println("Hasil :", hasil)
 	fmt.Println("---------------------")
 	fmt.Println("")
@@ -49,7 +49,8 @@ func soal3() {
 }
 
 func main() {
+	// code yang bakal di run
 	soal1()
-	soal2()
-	soal3()
+	// soal2()
+	// soal3()
 }

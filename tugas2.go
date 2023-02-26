@@ -51,6 +51,6 @@ func soal3() {
 func main() {
 	// code yang bakal di run
 	soal1()
-	// soal2()
-	// soal3()
+	soal2()
+	soal3()
 }

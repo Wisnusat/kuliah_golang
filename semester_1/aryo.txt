@@ -1,0 +1,25 @@
+program kue
+kamus
+    kue, orang, jumlah: integer
+algoritma
+    input(kue, orang)
+    while kue >= orang do
+        jumlah <-- jumlah + 1
+        kue <-- kue - orang
+    endwhile
+    output("Tiap orang dapat", jumlah)
+    output("Sisa kue", kue)
+endprogram
+
+
+program baterai
+kamus
+    baterai: integer
+algoritma
+    input(baterai)
+    repeat
+        output("Mengisi daya", baterai, "%")
+        baterai <-- baterai + 1
+    until baterai == 100
+    output("Baterai penuh 100%")
+endprogram

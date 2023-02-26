@@ -1,0 +1,192 @@
+program konsonan
+kamus
+    huruf: string
+algoritma
+    input(huruf)
+    if huruf == "A" OR huruf == "I" OR huruf == "E" OR huruf == "O" OR huruf == "a" OR huruf == "i" OR huruf == "u" OR huruf == "e" OR huruf == "o" then
+		output("bukan konsonan")
+	 else 
+		output("konsonan")
+	endif
+endprogram
+
+program kelipatan
+kamus
+    bil: int
+algoritma
+    input(bil)
+    if bil mod 3 == 0 AND bil mod 5 == 0 then
+		output("Kelipatan 3")
+		output("Kelipatan 5")
+	 else if bil mod 3 == 0 then
+		output("Kelipatan 3")
+	 else if bil mod 5 == 0 then
+		output("Kelipatan 5")
+	endif
+endprogram
+
+program segitiga
+kamus
+	a, b, c : integer
+algoritma
+	input(a, b, c)
+	if a == b AND b == c then
+		output("Segitiga Sama Sisi")
+	else if a == c AND a != b AND b != c then
+		output("Segitiga Sama Kaki")
+	else 
+		output("Segitiga Sembarang")
+	endif
+endprogram
+
+program mutlak
+kamus
+	x : integer
+algoritma
+	input(x)
+	if x > 0 then
+		output(x)
+	else if x < 0 then
+		x <-- x * -1
+		output(x)
+	else
+		output(0)
+	endif
+endprogram
+
+program temperatur
+kamus
+	a1, a2, a3, a4, a5 : real
+algoritma
+	input(a1, a2, a3, a4, a5)
+	if a1 > a2 AND a2 > a3 AND a3 > a4 AND a4 > a5 then
+		output("Stabil turun")
+	else if a1 < a2 AND a2 < a3 AND a3 < a4 AND a4 < a5 then
+		output("Stabil naik")
+	else 
+		output("Tidak stabil")
+	endif
+endprogram
+
+program profit
+kamus
+	first, second: real
+algoritma
+	input(first, second)
+	if first < second then
+		output("Peningkatan sebesar", second - first)
+	 else if first > second then
+		output("Penurunan sebesar", first - second)
+	 else 
+		output("Tetap")
+	endif
+endprogram
+
+program sepak_bola
+kamus
+	g1, g2, g3, g4, terbesar, terkecil: int
+algoritma
+	input(g1, g2, g3, g4)
+
+	if g1 > g2 AND g1 > g3 AND g1 > g4 then
+		terbesar <-- g1
+	 else if g2 > g1 AND g2 > g3 AND g2 > g4 then
+		terbesar <-- g2
+	 else if g3 > g1 AND g3 > g2 AND g3 > g4 then
+		terbesar <-- g3
+	 else if g4 > g1 AND g4 > g2 AND g4 > g3 then
+		terbesar <-- g4
+	 else 
+		terbesar <-- g1
+	endif
+
+	if g1 < g2 AND g1 < g3 AND g1 < g4 then
+		terkecil <-- g1
+	 else if g2 < g1 AND g2 < g3 AND g2 < g4 then
+		terkecil <-- g2
+	 else if g3 < g1 AND g3 < g2 AND g3 < g4 then
+		terkecil <-- g3
+	 else if g4 < g1 AND g4 < g2 AND g4 < g3 then
+		terkecil <-- g4
+	 else 
+		terkecil <-- g1
+	endif
+	output(terbesar, terkecil)	
+endprogram
+
+program parkir
+kamus
+	h1, m1, h2, m2, h3, m3: int
+algoritma
+	input(h1, m1, h2, m2)
+	if h2 <= 5 then
+		h2 <-- h2 + 12
+	endif
+	if m2 > m1 then
+		m3 = m2 - m1
+	 else 
+		m3 = m1 - m2
+	endif
+	if h2 > h1 then
+		h3 = h2 - h1
+	 else 
+		h3 = h1 -h2
+	endif
+	output(h3, "jam", m3, "menit")
+endprogram
+
+program akhir_tahun
+kamus
+	total, diskon: int
+	isCard: bool
+algoritma
+	input(total, isCard)
+	if total >= 200000 AND isCard then
+		diskon <-- total * 10 / 100
+		output("Kartu?", isCard)
+		output("Diskon?", true)
+		output("Cashback?", true)
+		output("Rp.", total-diskon-75000)
+	 else if total >= 100000 then
+		diskon <-- total * 10 / 100
+		output("Kartu?", isCard)
+		output("Diskon?", true)
+		output("Cashback?", false)
+		output("Rp.", total-diskon)
+	 else 
+		output("Kartu?", isCard)
+		output("Diskon?", false)
+		output("Cashback?", false)
+		output("Rp.", total)
+	endif
+endprogram
+
+program avatar
+kamus
+	p, appaBesar, appaKecil, dewasa, kecil, sisa: int
+algoritma
+	input(p)
+	appaBesar <-- 3
+	appaKecil <-- 5
+	for p > 0 
+		if appaBesar != 0 then
+			p <-- p - 5
+			dewasa <-- dewasa + 1
+			appaBesar <-- appaBesar - 1
+		 else if appaKecil != 0 then
+			p <-- p - 2
+			kecil <-- kecil + 1
+			appaKecil <-- appaKecil - 1
+		 else 
+			sisa <-- p
+			p <-- 0
+		endif
+	endfor
+	if kecil == 0 AND sisa == 0 then
+		output("Dewasa", dewasa)
+	 else if kecil != 0 AND sisa == 0 then
+		output("Dewasa", dewasa, ",", "Kecil", kecil)
+	 else 
+		output("Dewasa", dewasa, ",", "Kecil", kecil, ",", "dan", sisa, "tak berangkat")
+	endif
+endprogram

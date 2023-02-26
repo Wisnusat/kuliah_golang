@@ -1,0 +1,109 @@
+program skye
+kamus
+    hp: int
+    isSwarm: bool
+algoritma
+    input(hp)
+	input(isSwarm)
+	if hp >= 0 AND hp <= 100 then
+		if hp < 50 AND hp > 0 then
+			if isSwarm then
+				output("Membuat dinding")
+				output("Tambah HP")
+			 else 
+				output("Tambah HP")
+			endif
+		 else if hp == 0 then
+			output("Revive")
+			output("Membuat dinding")
+		 else if isSwarm then
+			output("Membuat dinding")
+		 else 
+			output("Tidak perlu mengeluarkan skill")
+		endif
+	 else 
+		output("Range HP melebihi batas")
+	endif
+endprogram
+
+program fotocopy
+kamus
+    isStudent, isSkripsi: bool
+    berlangganan, priority: int
+    total: real
+algoritma
+    input(&isStudent, &isSkripsi, &berlangganan, &total)
+	if isStudent AND berlangganan > 12 then
+		priority <-- 1
+		if isSkripsi then
+			output("Pelanggan prioritas", priority)
+			output(total - (total * 35 / 100))
+		 else 
+			output("Pelanggan prioritas", priority)
+			output(total - (total * 30 / 100))
+		endif
+	 else if isStudent AND berlangganan > 8 AND berlangganan <= 12 then
+		priority <-- 2
+		if isSkripsi then
+			output("Pelanggan prioritas", priority)
+			output(total - (total * 20 / 100))
+		 else 
+			output("Pelanggan prioritas", priority)
+			output(total - (total * 15 / 100))
+		endif
+	 else if isStudent then
+		output(total - (total * 10 / 100))
+	 else 
+		output(total)
+	endif
+endprogram
+
+program cekKapital
+kamus
+    x: char
+algoritma
+    input(x)
+    if x > 64 AND x <= 90 then
+		output(string(x), "adalah huruf kapital")
+	 else if x > 96 AND x <= 122 then
+		output(string(x), "bukan huruf kapital")
+	 else 
+		output("Inputan bukan huruf!")
+	endif
+endprogram
+
+program menentukanSegitiga
+kamus
+    s1, s2, s3: int
+algoritma
+    input(s1, s2, s3)
+	if (s1 <= 0 OR s2 <= 0 OR s3 <= 0) OR (s1 >= s2+s3 OR s2 >= s1+s3 OR s3 >= s1+s2) then
+		output("Tidak dapat membuat segitiga")
+	 else if (s1==s2 && s2!=s3) OR (s1==s3 && s3!=s2) OR (s2==s3 && s3!=s1) then
+		output("Segitiga sama kaki")
+	 else if s1==s2 && s2==s3 then
+		output("Segitiga sama sisi")
+	 else if (s1*s1 == s2*s2+s3*s3) OR (s2*s2==s1*s1+s3*s3) OR (s3*s3==s1*s1+s2*s2) then
+		output("Segitiga siku siku")
+	 else if (s1<=s2+s3) OR (s2<=s1+s3) OR (s3<=s1+s2) then
+		output("Segitiga bebas")
+	 else 
+		output("Tidak dapat membuat segitiga")
+	endif
+endprogram
+
+program jenisSoal
+kamus   
+    jenis: string
+algoritma
+    input(jenis)
+	if jenis == "mudah" then
+		output("Keren! Good job! :D")
+	 else if jenis == "sedang" then
+		output("Nice try :D")
+	 else if jenis == "sulit" then
+		output("yu bisa yu")
+	 else 
+		output("Inputan tidak valid")
+	endif
+endprogram

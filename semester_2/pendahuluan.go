@@ -40,26 +40,25 @@ func hasil_ujian_1301223456() {
 }
 
 func persegi_panjang_1301223456() {
-	var panjang, lebar, luas, keliling int
-	var diagonal float64
+	var p, l, luas, keliling, panjang_diagonal float64
 
-	fmt.Scanln(&panjang, &lebar)
-	luas = panjang * lebar
-	keliling = 2 * (panjang + lebar)
-	diagonal = math.Sqrt(float64((panjang * panjang)) + float64((lebar * lebar)))
+	fmt.Scanln(&p, &l)
+	luas = p * l
+	keliling = (2 * p) + (2 * l)
+	panjang_diagonal = math.Sqrt((p * p) + (l * l))
 	fmt.Println("Luas: ", luas)
 	fmt.Println("Keliing: ", keliling)
-	fmt.Println("Panjang diagonal: ", int(diagonal))
+	fmt.Println("Panjang diagonal: ", panjang_diagonal)
 }
 
 func diskon_1301223456() {
-	var tahun, total_belanja, jumlah_bayar, diskon, a, c, d int
+	var tahun_lahir, total_belanja, jumlah_bayar, diskon, a, c, d int
 
-	fmt.Scanln(&tahun)
+	fmt.Scanln(&tahun_lahir)
 	fmt.Scanln(&total_belanja)
-	a = (tahun / 1000) % 10
-	c = (tahun / 10) % 10
-	d = tahun % 10
+	a = tahun_lahir / 1000
+	c = (tahun_lahir / 10) % 10
+	d = tahun_lahir % 10
 	diskon = a * ((c * 10) + d)
 	jumlah_bayar = total_belanja - ((total_belanja * diskon) / 100)
 	fmt.Println("Besar diskon: ", diskon, "%")
@@ -67,8 +66,8 @@ func diskon_1301223456() {
 }
 
 func main() {
-	cek_kelipatan_1301223456()
-	hasil_ujian_1301223456()
-	persegi_panjang_1301223456()
+	// cek_kelipatan_1301223456()
+	// hasil_ujian_1301223456()
+	// persegi_panjang_1301223456()
 	diskon_1301223456()
 }

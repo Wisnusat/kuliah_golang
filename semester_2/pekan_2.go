@@ -68,19 +68,18 @@ func main() {
 	// -------------------------
 
 	// manggil function diskon
-	// var total_belanja, total_bayar int
-	// var isMember bool
+	var total_belanja int
+	var isMember bool
 
-	// fmt.Scanln(&total_belanja, &isMember)
-	// total_bayar = diskon(total_belanja, isMember)
-	// fmt.Println(total_bayar)
+	fmt.Scanln(&total_belanja, &isMember)
+	fmt.Println(diskon(total_belanja, isMember))
 	// -------------------------
 
 	// manggil function fibonacci
-	var n int
+	// var n int
 
-	fmt.Scanln(&n)
-	fmt.Println(fibonacci(n))
+	// fmt.Scanln(&n)
+	// fmt.Println(fibonacci(n))
 	// -------------------------
 
 	//manggil soal permutation

@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func segitiga(a, b, c int) string {
-	if a < b && a < c {
-		return "bukan segitiga"
-	} else {
+	if (a+b) > c && (a+c) > b && (b+c) > a {
 		return "segitiga"
+	} else {
+		return "bukan segitiga"
 	}
 }
 
@@ -42,10 +42,12 @@ func fibonacci(n int) int {
 }
 
 func faktorial(num int) int {
+	var rekursif int
 	if num == 1 || num == 0 {
 		return num
 	}
-	return num * faktorial(num-1)
+	rekursif = faktorial(num - 1)
+	return num * rekursif
 }
 
 func findPermutation(x, y int) int {
@@ -68,11 +70,11 @@ func main() {
 	// -------------------------
 
 	// manggil function diskon
-	var total_belanja int
-	var isMember bool
+	// var total_belanja int
+	// var isMember bool
 
-	fmt.Scanln(&total_belanja, &isMember)
-	fmt.Println(diskon(total_belanja, isMember))
+	// fmt.Scanln(&total_belanja, &isMember)
+	// fmt.Println(diskon(total_belanja, isMember))
 	// -------------------------
 
 	// manggil function fibonacci
@@ -83,9 +85,9 @@ func main() {
 	// -------------------------
 
 	//manggil soal permutation
-	// var x, y int
+	var x, y int
 
-	// fmt.Scanln(&x, &y)
-	// fmt.Println(faktorial(x), faktorial(y), findPermutation(x, y))
+	fmt.Scanln(&x, &y)
+	fmt.Println(faktorial(x), faktorial(y), findPermutation(x, y))
 	// -------------------------
 }

@@ -1,0 +1,71 @@
+function segitiga(a, b, c : integer) -> string
+algoritma
+    if (a+b) > c AND (a+c) > b AND (b+c) > a then
+        return "segitiga"
+    else 
+        return "bukan segitiga"
+    endif
+endfunction
+
+function diskon(total_belanja: integer, isMember: bool) -> integer
+kamus
+    hasil: integer
+algoritma
+    if total_belanja > 100000 AND isMember then
+		hasil <-- total_belanja - ((total_belanja * 10) / 100)
+	else if total_belanja > 100000 AND !isMember then
+		hasil <-- total_belanja - ((total_belanja * 5) / 100)
+	else 
+		hasil <-- total_belanja
+	endif
+	return hasil
+endfunction
+
+function fibonacci(n int) -> integer
+kamus
+    hasil, i, previous, next, current: integer
+algoritma
+    previous <-- 0
+    current <-- 1
+    i <-- 0
+
+    if n < 2 then
+        hasil <-- 0
+        return hasil
+    else
+        for i = 0; i < n; i++ do
+			hasil <-- hasil + previous
+			next <-- previous + current
+			previous <-- current
+			current <-- next
+        endfor
+        return hasil
+    endif
+endfunction
+
+function faktorial(num: integer) -> integer
+kamus
+    rekursif: integer
+algoritma
+    if num == 1 OR num == 0 then
+		return num
+	endif
+    rekursif <- faktorial(num-1)
+	return num * rekursif
+endfunction
+
+function findPermutation(x, y: integer) -> integer
+kamus
+    permutation: integer
+algoritma
+    if x > y then
+		permutation <-- faktorial(x) / faktorial(x-y)
+	else if x < y then
+		permutation <-- faktorial(y) / faktorial(y-x)
+	else 
+		permutation <-- faktorial(x)
+	endif
+	return permutation
+endfunction
+
+		
